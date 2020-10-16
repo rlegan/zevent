@@ -36,6 +36,16 @@ async def on_ready():
 
 
 @bot.command()
+async def total(ctx):
+    data = await get_data()
+    total = data['donationAmount']['formatted']
+    desc = 'ZEVENT 2020 HAS NOW RAISED ***' + total + '*** !'
+    embed = discord.Embed(title='TOTAL DONATIONS',
+                          description=desc, color=0x4bba30)
+    await bot.get_channel(ctx.message.channel.id).send(embed=embed)
+
+
+@bot.command()
 async def goal(ctx, arg):
     data = await get_data()
     streamer = check_streamer_name(data, arg)
