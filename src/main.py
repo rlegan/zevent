@@ -12,8 +12,8 @@ async def get_data():
     return json
 
 
-def create_link(display, name):
-    return '[' + display + ']' + '(https://www.twitch.tv/' + name + ')'
+def create_link(display, name, game):
+    return '[' + display + ']' + '(https://www.twitch.tv/' + name + ')' + '  -> 🎮 ' + game
 
 
 def create_goal(goal, donation_amout):
@@ -78,14 +78,26 @@ async def goal(ctx, arg):
 @bot.command()
 async def online(ctx):
     data = await get_data()
-    connected = ''
+    connectedStreamers = ''
     for element in data['live']:
         if (element['online'] == True):
-            connected += create_link(element['display'],
-                                     element['twitch']) + ' | '
-    embed = discord.Embed(title='ONLINE STREAMERS',
-                          description=connected, color=0x4bba30)
-    await bot.get_channel(ctx.message.channel.id).send(embed=embed)
+            connectedStreamer = create_link(element['display'],
+                                            element['twitch'], element['game']) + '\n'
+            if (len(connectedStreamers) + len(connectedStreamer) >= 2048 and '\t' not in connectedStreamers):
+                connectedStreamers += '\t'
+            connectedStreamers += connectedStreamer
+
+    if (len(connectedStreamers.split('\t')) > 1):
+        embed = discord.Embed(title='ONLINE STREAMERS 1/2',
+                              description=connectedStreamers.split('\t')[0], color=0x4bba30)
+        await bot.get_channel(ctx.message.channel.id).send(embed=embed)
+        embed = discord.Embed(title='ONLINE STREAMERS 2/2',
+                              description=connectedStreamers.split('\t')[1], color=0x4bba30)
+        await bot.get_channel(ctx.message.channel.id).send(embed=embed)
+    else:
+        embed = discord.Embed(title='ONLINE STREAMERS',
+                              description=connectedStreamers, color=0x4bba30)
+        await bot.get_channel(ctx.message.channel.id).send(embed=embed)
 
 
 bot.run(TOKEN)
