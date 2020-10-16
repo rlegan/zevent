@@ -11,12 +11,4 @@ async def on_ready():
     print('user id : {}'.format(bot.user.id))
 
 
-@bot.event
-async def on_message_edit(before, after):
-    channel = before.channel
-    author = before.author
-
-    await channel.send(
-        '```{}```⬇️```{}```(<@{}>)'.format(before.content, after.content, author.id))
-
 bot.run(TOKEN)
