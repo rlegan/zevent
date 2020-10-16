@@ -4,10 +4,10 @@
 
 ### ONLINE STREAMERS
 
-To check which streamers are online, you can use `z!online` command.
+To check which streamers are online and what games they are playing, you can use `z!online` command.
 You can click on the streamer name to be redirected to his/her stream !
 
-<img src=https://i.ibb.co/VT2Lvf3/Capture-d-e-cran-2020-10-16-a-21-43-19.png width="500" />
+<img src=https://i.ibb.co/Wg9dGQP/Capture-d-e-cran-2020-10-17-a-00-10-06.png width="300" />
 
 ### TOTAL DONATION
 
