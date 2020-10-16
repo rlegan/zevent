@@ -9,6 +9,12 @@ You can click on the streamer name to be redirected to his/her stream !
 
 <img src=https://i.ibb.co/VT2Lvf3/Capture-d-e-cran-2020-10-16-a-21-43-19.png width="500" />
 
+### TOTAL DONATION
+
+To check the total donation in the current ZEVENT, please use `z!total` command.
+
+<img src=https://i.ibb.co/QHWkpV6/Capture-d-e-cran-2020-10-16-a-22-20-28.png width="500" />
+
 ### DONATIONS GOALS
 
 To check donations goals for a certain streamer, like zerator for example, please use the `z!goal zerator` command.
