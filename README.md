@@ -12,7 +12,7 @@ To check which streamers are online, you can use `z!online` command.
 
 To check donations goals for a certain streamer, like zerator for example, please use the `z!goal zerator` command.
 
-<img src=https://i.ibb.co/fCDkHr0/Capture-d-e-cran-2020-10-16-a-21-38-56.png width="400" />
+<img src=https://i.ibb.co/L14RJgL/Capture-d-e-cran-2020-10-16-a-21-45-30.png width="400" />
 
 ## RUN IT ON YOUR OWN COMPUTER
 
